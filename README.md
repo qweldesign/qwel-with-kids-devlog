@@ -1,4 +1,4 @@
-# qwel-with-kids-devlog
+# QWEL Local Engine Project
 
 *A small playground for Three.js & Blender with my kids.*
 
