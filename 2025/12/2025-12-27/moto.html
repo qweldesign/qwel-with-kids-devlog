@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>bound バウンド </title>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"></script>
+    <script>
+      //座標を定義
+      let x = 0;
+      let y = 0;
+
+      let vx =10;
+      let vy =10;
+      //最初に１度だけ行われる
+      function setup() {
+        createCanvas(600,400)//キャンパスを作成
+        frameRate(60)
+        background(10);//
+      }
+      function draw() {
+        x += vx;
+        y += vy;
+
+        vy++;
+        vy *= 0.99;
+        
+
+        if (x < 0 || x > width) {
+         vx *=-1;
+        }
+        if (y > height) {
+         vy *=-1;
+        }
+
+        background(0,50);
+        circle(x,y,30)
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ball bound</title>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"></script>
+    <script>
+      let x = 20;
+      let y = 20;
+      let vx = 20;
+      let vy = 2;
+      function setup() {
+        createCanvas(1250, 615);
+        frameRate(60);
+        background(0);
+      }
+
+      function draw () {
+        circle(x, y, 30)
+        x += vx;
+        y += vy;
+
+        vy++;
+        vy *= 0.99
+
+        if (x < 15 || x > 1235) {
+          vx *= -1
+        }
+
+        if (y < 15 || y > 600) {
+          vy *= -1
+        }
+
+        background(0, 50);
+        circle(x, y, 30)
+      }
+    </script>
+  </body>
+</html>
