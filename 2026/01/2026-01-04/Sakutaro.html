@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>p5.js 演習</title>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"></script>
+    <script>
+      const balls = [];
+
+      function setup() {
+        createCanvas(600, 400);
+        frameRate(60) 
+      }
+
+      function draw() {
+        const ball = {};
+        ball.x = Math.random() * width;
+        ball.y = 0;
+        ball.vy = Math.random() * 2 + 1
+        balls.push(ball);
+        background(100);
+
+        const len = balls.length;
+        for (let i = 0; i < len; i++) {
+          const ball = balls[i];
+          ball.y += ball.vy;
+          ball.x += Math.random() * 2 - 1
+          circle(ball.x, ball.y, 10);
+        }
+      }
+    </script>
+  </body>
+</html>
